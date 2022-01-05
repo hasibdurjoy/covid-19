@@ -7,15 +7,15 @@ const Country = ({ countryData }) => {
         <div>
             <Col>
                 <Card>
-                    <Row className='p-3'>
-                        <Col sm={4} md={4} lg={4}>
+                    <Row className='px-3 pt-3'>
+                        <Col xs={12} sm={12} md={4} lg={4} className='d-flex align-items-center justify-content-center'>
                             <img src={countryInfo.flag} alt="" height="60px" width="100px" />
                         </Col>
-                        <Col className='d-flex align-items-center justify-content-center'>
-                            <Card.Title>{country}</Card.Title>
+                        <Col xs={12} sm={12} md={8} lg={8} className='d-flex align-items-center justify-content-center'>
+                            <h4>{country}</h4>
                         </Col>
                     </Row>
-                    <Card.Body className='mx-auto'>
+                    <Card.Body className='mx-auto pt-2'>
                         <Card.Text>
                             <h6>Today Cases: {todayCases}</h6>
                             <h6>Today Deaths: {todayDeaths}</h6>
