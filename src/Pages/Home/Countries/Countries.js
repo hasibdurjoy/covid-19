@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, FormControl, InputGroup, Row, Spinner } from 'react-bootstrap';
 import Country from '../Country/Country';
 
 const Countries = () => {
     const [countries, setCountries] = useState([]);
     const [displayCountries, setDisplayCountries] = useState([]);
+    const [isLoading, setIsloading] = useState(false);
     useEffect(() => {
+        setIsloading(true)
         fetch('https://corona.lmao.ninja/v2/countries?yesterday&sort')
             .then(res => res.json())
             .then(data => {
                 setDisplayCountries(data)
                 setCountries(data)
+                setIsloading(false);
             })
     }, [])
     const searchCountry = (e) => {
@@ -56,6 +59,20 @@ const Countries = () => {
                     </Form.Group>
                 </Col>
             </Row>
+            {
+                isLoading && <div className='text-center my-4'>
+                    <Button variant="primary" disabled>
+                        <Spinner
+                            as="span"
+                            animation="grow"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                        />
+                        Loading...
+                    </Button>
+                </div>
+            }
             <Row xs={1} md={3} className="g-4">
                 {
                     displayCountries.map(countryData => <Country key={countryData.country} countryData={countryData}></Country>)
