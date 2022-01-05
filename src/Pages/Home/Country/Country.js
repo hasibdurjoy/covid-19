@@ -8,8 +8,12 @@ const Country = ({ countryData }) => {
             <Col>
                 <Card>
                     <Row className='p-3'>
-                        <Col sm={4} md={4} lg={4}><img src={countryInfo.flag} alt="" height="60px" width="100px" /></Col>
-                        <Col className='d-flex align-items-center justify-content-center'><Card.Title>{country}</Card.Title></Col>
+                        <Col sm={4} md={4} lg={4}>
+                            <img src={countryInfo.flag} alt="" height="60px" width="100px" />
+                        </Col>
+                        <Col className='d-flex align-items-center justify-content-center'>
+                            <Card.Title>{country}</Card.Title>
+                        </Col>
                     </Row>
                     <Card.Body className='mx-auto'>
                         <Card.Text>
