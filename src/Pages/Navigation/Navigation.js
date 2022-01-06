@@ -5,7 +5,7 @@ const Navigation = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#">Covid Info</Navbar.Brand>
+                <Navbar.Brand href="#" className='d-flex justify-content-center align-items-center'><i className="fas fa-virus text-success fs-2"></i><img src="https://i.ibb.co/d7xxxzx/covid-logo-removebg-preview.png" alt="" height="50px" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -15,8 +15,8 @@ const Navigation = () => {
                     >
 
                     </Nav>
-                    <Nav.Link href="#action1">Home</Nav.Link>
-                    <Nav.Link href="#action2">Link</Nav.Link>
+
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>
